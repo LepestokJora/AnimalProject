@@ -43,10 +43,19 @@ class ViewController: UIViewController {
     
     @IBAction func btnAction(_ sender: Any) {
         
+        parametersTF.text = "squeezeDown"
+        
         sprinView.animation = "squeezeDown"
         sprinView.animate()
 
         
+        sprinView.y = -50
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5, execute: {
+            self.sprinView.animation = "fall"
+            self.sprinView.animateTo()
+        })
+
+         
         
         
     }
