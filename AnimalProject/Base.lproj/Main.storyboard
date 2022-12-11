@@ -16,46 +16,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSl-lC-Vg1">
-                                <rect key="frame" x="75" y="91" width="240" height="150"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqn-uX-0ty">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="150"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <constraints>
-                                    <constraint firstItem="dqn-uX-0ty" firstAttribute="top" secondItem="MSl-lC-Vg1" secondAttribute="top" id="FzJ-2O-T3S"/>
-                                    <constraint firstAttribute="bottom" secondItem="dqn-uX-0ty" secondAttribute="bottom" id="L6g-au-SbB"/>
-                                    <constraint firstItem="dqn-uX-0ty" firstAttribute="leading" secondItem="MSl-lC-Vg1" secondAttribute="leading" id="Wbw-c6-DsU"/>
-                                    <constraint firstAttribute="trailing" secondItem="dqn-uX-0ty" secondAttribute="trailing" id="ha4-U8-DW1"/>
-                                    <constraint firstAttribute="height" constant="150" id="iza-df-Kcp"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JA1-HU-sMJ">
-                                <rect key="frame" x="75" y="390" width="240" height="35"/>
+                                <rect key="frame" x="75" y="675" width="240" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="btnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8v-In-VOT"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KpZ-J8-CAj" customClass="SpringView" customModule="SpringAnimation">
+                                <rect key="frame" x="75" y="114" width="240" height="128"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqn-uX-0ty">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dqn-uX-0ty" secondAttribute="trailing" id="0kE-p1-ffV"/>
+                                    <constraint firstItem="dqn-uX-0ty" firstAttribute="leading" secondItem="KpZ-J8-CAj" secondAttribute="leading" id="SSD-gz-lXJ"/>
+                                    <constraint firstAttribute="height" constant="128" id="Yzf-Qy-m85"/>
+                                    <constraint firstAttribute="bottom" secondItem="dqn-uX-0ty" secondAttribute="bottom" id="kAF-hf-lpN"/>
+                                    <constraint firstItem="dqn-uX-0ty" firstAttribute="top" secondItem="KpZ-J8-CAj" secondAttribute="top" id="qBb-0U-91D"/>
+                                    <constraint firstAttribute="width" constant="240" id="xDm-pX-435"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="JA1-HU-sMJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="2Gh-T7-ja6"/>
-                            <constraint firstItem="MSl-lC-Vg1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="Cyh-uX-QOy"/>
+                            <constraint firstItem="KpZ-J8-CAj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="2Sw-xw-42m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KpZ-J8-CAj" secondAttribute="trailing" constant="75" id="3NF-QM-lYk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JA1-HU-sMJ" secondAttribute="trailing" constant="75" id="IzU-vT-D04"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JA1-HU-sMJ" secondAttribute="bottom" constant="385" id="XTU-Mn-TPO"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MSl-lC-Vg1" secondAttribute="trailing" constant="75" id="bBQ-KZ-Hjt"/>
-                            <constraint firstItem="MSl-lC-Vg1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="fWv-CS-yzT"/>
+                            <constraint firstItem="KpZ-J8-CAj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="67" id="Uw2-uV-dod"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JA1-HU-sMJ" secondAttribute="bottom" constant="100" id="XTU-Mn-TPO"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animalVC" destination="MSl-lC-Vg1" id="ygN-SA-UEo"/>
                         <outlet property="parametersTF" destination="dqn-uX-0ty" id="ZuV-B6-V30"/>
+                        <outlet property="sprinView" destination="KpZ-J8-CAj" id="S9I-fX-KdJ"/>
                         <outlet property="startButton" destination="JA1-HU-sMJ" id="2GC-qm-6Pk"/>
                     </connections>
                 </viewController>
@@ -65,6 +69,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
