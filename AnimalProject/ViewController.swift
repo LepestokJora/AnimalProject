@@ -12,23 +12,44 @@ import SpringAnimation
 class ViewController: UIViewController {
 
     
-    @IBOutlet weak var parametersTF: UITextField!
+    @IBOutlet weak var parametersTV: UITextView!
     
     @IBOutlet weak var startButton: UIButton!
     
     @IBOutlet weak var sprinView: SpringView!
     private var animationStarted = false
     
+    private let animationArrey: [String] = ["pop",
+                                            "slideLeft",
+                                            "slideRight",
+                                            "slideDown",
+                                            "slideUp",
+                                            "squeezeLeft",
+                                            "squeezeRight",
+                                            "squeezeDown",
+                                            "squeezeUp",
+                                            "fadeIn",
+                                            "fadeOut",
+                                            "fadeOutIn",
+                                            "fadeInLeft",
+                                            "fadeInRight",
+                                            "fadeInDown",
+                                            "fadeInUp",
+                                            "zoomIn",
+                                            "zoomOut",
+                                            "fall",
+                                            "shake",
+                                            "flipX",
+                                            "flipY",
+                                            "morph",
+                                            "squeeze",
+                                            "flash",
+                                            "wobble",
+                                            "swing"]
     
     
-    
-    
-    /*1.оздайте проект и интегрируйте в него фреймворк Spring при помощи SPM.
-     
-     Должна отображаться информация о текущей анимации: название и параметры анимации.
-     Запуск анимации должен происходить по нажатию на кнопку. При этом на самой кнопке должно отображаться название следующей анимации.
-     Анимации должны сменяться бесконечно в случайном порядке со слу  чайными значениями параметров*/
-    
+    private var nextAnimation = "pop"
+   
     
     
     override func viewDidLoad() {
@@ -36,28 +57,24 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        parametersTF.layer.cornerRadius = 50
-        startButton.layer.cornerRadius = 50
+        sprinView.layer.cornerRadius = 20
+        parametersTV.layer.cornerRadius = 20
+        startButton.layer.cornerRadius = 20
+        startButton.layer.masksToBounds = true
+        startButton.setTitle("Run", for: .normal)
     }
 
     
     @IBAction func btnAction(_ sender: Any) {
         
-        parametersTF.text = "squeezeDown"
-        
-        sprinView.animation = "squeezeDown"
+        sprinView.animation = nextAnimation
+        nextAnimation = animationArrey.randomElement()!
+        startButton.setTitle(nextAnimation, for: .normal)
         sprinView.animate()
 
+    
         
-        sprinView.y = -50
-        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1.5, execute: {
-            self.sprinView.animation = "fall"
-            self.sprinView.animateTo()
-        })
-
-         
-        
-        
+        parametersTV.text = "X:\(sprinView.x)\nY:\(sprinView.y)\nScaleX:\(sprinView.scaleX)\nRotate:\(sprinView.rotate)"
     }
     
     
